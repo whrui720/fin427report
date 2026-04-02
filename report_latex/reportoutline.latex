@@ -1,0 +1,941 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{multirow}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Project title. This will flow through to the header},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Project title. This will flow through to the header}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+{[}Insert an abstract here. Summarize your project in 400 words or less.
+It should fit on this page. Put your names, email addresses, phone
+numbers and date below the abstract.{]}
+
+Jimmy Connors \textbar{} jimmy.connors@usopen.com \textbar{}
+734-111-1111\\
+John McEnroe \textbar{} john.mcenroe@wimbledon.com \textbar{}
+734-000-0000\\
+March 13, 2026
+
+\hypertarget{contents}{%
+\section{Contents}\label{contents}}
+
+\protect\hyperlink{introduction}{Introduction
+\protect\hyperlink{introduction}{1}}
+
+\protect\hyperlink{what-goes-in-the-introduction}{{[}What goes in the
+introduction?{]} \protect\hyperlink{what-goes-in-the-introduction}{1}}
+
+\protect\hyperlink{the-template}{{[}The template{]}
+\protect\hyperlink{the-template}{1}}
+
+\protect\hyperlink{heading-2-example}{{[}Heading 2 example{]}
+\protect\hyperlink{heading-2-example}{1}}
+
+\protect\hyperlink{heading-3-example}{{[}Heading 3 example{]}
+\protect\hyperlink{heading-3-example}{1}}
+
+\protect\hyperlink{data}{Data \protect\hyperlink{data}{1}}
+
+\protect\hyperlink{variable-names-labels-and-descriptions}{Variable
+names, labels and descriptions
+\protect\hyperlink{variable-names-labels-and-descriptions}{1}}
+
+\protect\hyperlink{descriptive-statistics-on-the-whole-sample}{Descriptive
+statistics on the whole sample
+\protect\hyperlink{descriptive-statistics-on-the-whole-sample}{2}}
+
+\protect\hyperlink{descriptive-statistics-on-your-variable-of-interest}{Descriptive
+statistics on your variable of interest
+\protect\hyperlink{descriptive-statistics-on-your-variable-of-interest}{2}}
+
+\protect\hyperlink{training-test-validation-samples-and-the-last-month}{Training,
+test, validation samples and the last month
+\protect\hyperlink{training-test-validation-samples-and-the-last-month}{2}}
+
+\protect\hyperlink{results}{Results \protect\hyperlink{results}{2}}
+
+\protect\hyperlink{regression}{Regression
+\protect\hyperlink{regression}{3}}
+
+\protect\hyperlink{ordinary-least-squares-regression}{Ordinary least
+squares regression
+\protect\hyperlink{ordinary-least-squares-regression}{3}}
+
+\protect\hyperlink{penalized-regression}{Penalized regression
+\protect\hyperlink{penalized-regression}{3}}
+
+\protect\hyperlink{decision-trees}{Decision trees
+\protect\hyperlink{decision-trees}{3}}
+
+\protect\hyperlink{vanilla-decision-tree}{Vanilla decision tree
+\protect\hyperlink{vanilla-decision-tree}{3}}
+
+\protect\hyperlink{random-forest}{Random forest
+\protect\hyperlink{random-forest}{3}}
+
+\protect\hyperlink{gradient-boosting}{Gradient boosting{]}
+\protect\hyperlink{gradient-boosting}{3}}
+
+\protect\hyperlink{neural-networks}{Neural networks
+\protect\hyperlink{neural-networks}{3}}
+
+\protect\hyperlink{reconciliation-of-results-based-upon-different-estimation-techniques}{Reconciliation
+of results based upon different estimation techniques
+\protect\hyperlink{reconciliation-of-results-based-upon-different-estimation-techniques}{3}}
+
+\protect\hyperlink{conclusion}{Conclusion
+\protect\hyperlink{conclusion}{4}}
+
+\protect\hyperlink{references}{References
+\protect\hyperlink{references}{4}}
+
+\protect\hyperlink{appendix-description-of-each-variable}{Appendix:
+Description of each variable
+\protect\hyperlink{appendix-description-of-each-variable}{4}}
+
+\hypertarget{tables}{%
+\section{Tables}\label{tables}}
+
+Table 1. Variable names, labels and constraints
+\protect\hyperlink{_Ref224483216}{2}
+
+Table 2. Descriptive statistics \protect\hyperlink{_Toc224486650}{2}
+
+Table 3. Stock rankings under different estimation techniques
+\protect\hyperlink{_Toc224486651}{4}
+
+\hypertarget{figures}{%
+\section{Figures}\label{figures}}
+
+Figure 1. Percentage change from a year ago in the U.S. Consumer Price
+Index for all urban consumers: All items in U.S. City Average,
+seasonally-adjusted \protect\hyperlink{_Ref88579904}{3}
+
+\hypertarget{section}{%
+\section{}\label{section}}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\hypertarget{what-goes-in-the-introduction}{%
+\subsection{{[}What goes in the
+introduction?{]}}\label{what-goes-in-the-introduction}}
+
+Tell the reader what your overall question is, how you went about
+answering the question, and what your conclusion is.
+
+\hypertarget{the-template}{%
+\subsection{{[}The template{]}}\label{the-template}}
+
+{[}Please use this template to make your report. It will help me to
+compare projects across groups. Use the style formatting above to
+automatically create headings, and use ``Insert Caption'' under the
+References tab to automatically create captions for tables and
+figures.{]}
+
+\begin{itemize}
+\item
+  If you use the style formatting to automatically create headings you
+  will be able to populate the table of contents.
+\item
+  If you use captions you will be able to automatically create a list of
+  tables and a list of figures. Make sure that you update the table of
+  contents, and lists of tables and figures because they don't
+  automatically update. You right click on the list and select ``update
+  field'' and then select the option to update the entire table.
+\item
+  How many tables and charts is best at your discretion. Exercise your
+  judgment about presentation of tables (borders, right justification
+  versus center justification, headings, layout etc.). Don't let tables
+  span one page to the next unless the table is so large is cannot fit
+  on one page.
+\end{itemize}
+
+{[}The this template has examples of the following styles: Heading 1,
+Heading 2, Heading 3, and a bulleted list paragraph. It also has
+examples of a table and figure.{]}
+
+\hypertarget{heading-2-example}{%
+\subsection{{[}Heading 2 example{]}}\label{heading-2-example}}
+
+\hypertarget{heading-3-example}{%
+\subsubsection{{[}Heading 3 example{]}}\label{heading-3-example}}
+
+\begin{itemize}
+\item
+  Bullets example
+
+  \begin{itemize}
+  \item
+    Bullets example
+
+    \begin{itemize}
+    \item
+      Bullets example
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{data}{%
+\section{Data}\label{data}}
+
+\hypertarget{variable-names-labels-and-descriptions}{%
+\subsection{Variable names, labels and
+descriptions}\label{variable-names-labels-and-descriptions}}
+
+The name and label for each independent variable are presented in ,
+along with the group that compiled each variable and the constraint that
+was applied to each variable to mitigate the potential for outliers to
+have an outsized influence on the results. For example, 0.50 for
+Book-to-market equity means the variable was constrained at
+0.5\textsuperscript{th} percentile and the 99.5\textsuperscript{th}
+percentile. A description for each variable is in the appendix. Each
+group has compiled a paragraph explaining how the variable is computed,
+the source of the data and why there is a plausible reason this
+characteristic is associated with industry-adjusted returns.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.6659}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1410}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0681}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1250}}@{}}
+\caption{\protect\hypertarget{_Ref224483216}{}{}Table . Variable names,
+labels and constraints}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Name}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Label}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Group}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Constraint}
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Name}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Label}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Group}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Constraint}
+\end{minipage} \\
+\midrule()
+\endhead
+Real market capitalization & lag1mcreal & J & 0.00 \\
+Natural logarithm of real market capitalization & lnlag1mcreal & J &
+0.00 \\
+Book-to-market equity & bm & J & 0.50 \\
+Option volume/stock volume & os & 1 & 0.05 \\
+Momentum12 (12 mth ret ending 1 mth prior to port formation) & mom12 & 2
+& 1.00 \\
+Net profit margin (Net profit/Sales) & npm & 3 & 1.00 \\
+Standard deviation of board members' age & sdage & 4 & 0.00 \\
+Percentage male board members & gender & 4 & 0.00 \\
+Systematic risk & beta & 5 & 1.00 \\
+Net working capital/Assets & nwca & 6 & 0.50 \\
+Amihud liquidity x 1,000,000 & illiq & 7 & 2.50 \\
+Current ratio (Current assets/Current liabilities) & cr & 8 & 1.00 \\
+Natural logarithm of the change in issued shares & lnshchg & 9 & 0.50 \\
+Momentum 11 (11 mth ret ending 1 mth prior to port formation) & mom11 &
+10 & 1.00 \\
+Change in return on assets & chgroa & 11 & 2.50 \\
+Return on invested capital & roic & 12 & 2.50 \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{descriptive-statistics-on-the-whole-sample}{%
+\subsection{Descriptive statistics on the whole
+sample}\label{descriptive-statistics-on-the-whole-sample}}
+
+The dataset covers the period January 2001 to October 2024, comprising 1,053,738 stock-month observations across all GICS sectors. Table~\ref{tab:desc_stats} reports summary statistics for all 15 predictor variables and the target variable (industry-adjusted return, \texttt{indadjret}), computed on the full sample excluding November 2024. The \texttt{fin*} columns are winsorized at the percentile constraints listed in Table~1; the percentage missing reflects the fraction of raw observations that required imputation. \texttt{lnshchg} (log change in shares issued) has the highest missingness at approximately 75\%, while illiquidity and momentum are nearly complete.
+
+\begin{longtable}[]{{lrrrrrrrrr}}
+\caption{Table . Descriptive statistics on the whole sample}\label{tab:desc_stats}\tabularnewline
+\toprule()
+\textbf{Variable} & \textbf{N} & \textbf{Mean} & \textbf{Std} & \textbf{p1} & \textbf{p25} & \textbf{p50} & \textbf{p75} & \textbf{p99} & \textbf{\%Miss} \\
+\midrule()
+\endfirsthead
+\toprule()
+\textbf{Variable} & \textbf{N} & \textbf{Mean} & \textbf{Std} & \textbf{p1} & \textbf{p25} & \textbf{p50} & \textbf{p75} & \textbf{p99} & \textbf{\%Miss} \\
+\midrule()
+\endhead
+Log Market Cap & 1,053,738 & 13.6486 & 2.1184 & 9.0592 & 12.1470 & 13.6252 & 15.0681 & 18.7068 & 0.0 \\
+Book-to-Market & 1,053,738 & 0.5637 & 0.6363 & 0.0000 & 0.1263 & 0.4239 & 0.7860 & 3.2579 & 18.9 \\
+Chg in ROA & 1,053,738 & 0.0002 & 0.1394 & -0.5519 & -0.0063 & 0.0000 & 0.0056 & 0.5814 & 30.5 \\
+Amihud Illiquidity & 1,053,738 & 1.2648 & 5.6545 & 0.0001 & 0.0007 & 0.0059 & 0.0911 & 42.1305 & 0.0 \\
+Std Dev Board Age & 1,053,738 & 6.2181 & 3.8834 & 0.0000 & 4.3000 & 6.8000 & 8.8000 & 14.4000 & 20.4 \\
+Pct Male Board & 1,053,738 & 0.6869 & 0.3659 & 0.0000 & 0.6360 & 0.8330 & 1.0000 & 1.0000 & 20.4 \\
+Net Profit Margin & 1,053,738 & -0.4015 & 2.8284 & -20.2819 & 0.0000 & 0.0250 & 0.0950 & 0.3770 & 17.7 \\
+Momentum 12m & 1,053,738 & 0.1156 & 0.5292 & -0.8424 & -0.1756 & 0.0376 & 0.3066 & 2.4969 & 5.1 \\
+Current Ratio & 1,053,738 & 2.4912 & 3.8439 & 0.0000 & 0.0500 & 1.5341 & 2.8528 & 21.8429 & 24.9 \\
+Option/Stock Vol & 1,053,738 & 0.0005 & 0.0015 & 0.0000 & 0.0000 & 0.0001 & 0.0005 & 0.0061 & 37.2 \\
+Beta & 1,053,738 & 0.5794 & 0.7244 & -0.1409 & 0.0000 & 0.1755 & 1.0668 & 2.8688 & 45.7 \\
+NWC/Assets & 1,053,738 & 0.1739 & 0.2548 & -0.2023 & 0.0000 & 0.0572 & 0.3091 & 0.8975 & 33.2 \\
+Ln Share Issuance Chg & 1,053,738 & 0.0017 & 0.0216 & -0.0072 & 0.0000 & 0.0000 & 0.0000 & 0.0502 & 75.5 \\
+Momentum 11m & 1,053,738 & 0.1062 & 0.5057 & -0.8307 & -0.1715 & 0.0359 & 0.2914 & 2.3624 & 4.7 \\
+ROIC & 1,053,738 & 0.0051 & 0.2097 & -0.9830 & 0.0000 & 0.0000 & 0.0960 & 0.3870 & 17.4 \\
+indadjret & 1,053,738 & 0.0035 & 0.1567 & -0.3590 & -0.0613 & -0.0038 & 0.0544 & 0.4960 & 0.0 \\
+\bottomrule()
+\end{longtable}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.90\linewidth]{media/media/fig_desc_stats.png}
+\caption{Spearman correlation matrix of the 15 predictor variables computed
+on the training set (January 2001 -- December 2018). Values shown are
+Spearman rank correlations. The momentum variables (\texttt{finmom11},
+\texttt{finmom12}) are highly correlated with each other, as expected.}
+\end{figure}
+
+
+\hypertarget{descriptive-statistics-on-your-variable-of-interest}{%
+\subsection{Descriptive statistics on your variable of
+interest}\label{descriptive-statistics-on-your-variable-of-interest}}
+
+
+We select \textbf{12-month momentum} (\texttt{finmom12}) as our variable of
+interest. The momentum anomaly -- the tendency for recent winners to continue
+outperforming recent losers -- is among the most robust and replicated findings
+in empirical asset pricing (Jegadeesh and Titman, 1993). The canonical
+specification uses the cumulative return over months $t-12$ through $t-2$
+(skipping the most recent month to avoid short-term reversal). For the
+Household and Personal Products sector, stable fundamental cashflows reduce the
+likelihood that strong past returns will be rapidly mean-reverted by earnings
+surprises, making momentum particularly informative.
+
+The variable is winsorized at the 1\textsuperscript{st} and
+99\textsuperscript{th} percentiles (constraint 1.00), which preserves large
+momentum signals while eliminating extreme data errors.
+Descriptive statistics for the full sample (excluding November 2024) are
+presented in the table below. Figure~2 shows the distribution of
+\texttt{finmom12} within our sector, and Figure~3 confirms the positive
+monotonic relationship between momentum decile and mean industry-adjusted
+return in the training set.
+
+
+
+\begin{longtable}[]{{lrrrrrrrrrrr}}
+\caption{Table . Descriptive statistics for Momentum 12m (variable of interest)}\label{tab:voi_stats}\tabularnewline
+\toprule()
+\textbf{Variable} & \textbf{N} & \textbf{Mean} & \textbf{Std} & \textbf{p1} & \textbf{p5} & \textbf{p25} & \textbf{p50} & \textbf{p75} & \textbf{p95} & \textbf{p99} & \textbf{\%Miss} \\
+\midrule()
+\endfirsthead
+\toprule()
+\textbf{Variable} & \textbf{N} & \textbf{Mean} & \textbf{Std} & \textbf{p1} & \textbf{p5} & \textbf{p25} & \textbf{p50} & \textbf{p75} & \textbf{p95} & \textbf{p99} & \textbf{\%Miss} \\
+\midrule()
+\endhead
+Momentum 12m & 1,053,738 & 0.1156 & 0.5292 & -0.8424 & -0.6154 & -0.1756 & 0.0376 & 0.3066 & 1.0525 & 2.4969 & 5.1 \\
+\bottomrule()
+\end{longtable}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.80\linewidth]{media/media/fig_voi_distribution.png}
+\caption{Distribution of 12-month momentum (\texttt{finmom12}) for
+Household \& Personal Products stocks (sector 30, group 3030).}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.80\linewidth]{media/media/fig_voi_return_scatter.png}
+\caption{Mean industry-adjusted return by decile of 12-month momentum,
+training set (January 2001 -- December 2018), Household \& Personal Products sector.
+Higher-momentum stocks earn systematically higher subsequent returns.}
+\end{figure}
+
+
+\hypertarget{training-test-validation-samples-and-the-last-month}{%
+\subsection{Training, test, validation samples and the last
+month}\label{training-test-validation-samples-and-the-last-month}}
+
+
+We partition the data chronologically to prevent look-ahead bias. All models
+are trained on the full cross-sectional universe (all GICS sectors) to maximise
+the number of observations available for learning the relationship between stock
+characteristics and industry-adjusted returns; predictions are then restricted
+to the 38 Household and Personal Products stocks present in November 2024.
+
+\begin{itemize}
+  \item \textbf{Training set (January 2001 -- December 2018):} Used to fit
+    all model parameters. The 18-year window captures multiple full business
+    cycles including the dot-com bust, the 2008 financial crisis, and the
+    subsequent recovery.
+  \item \textbf{Validation set (January 2019 -- December 2021):} Used for
+    hyperparameter selection (LASSO penalty, tree depth, forest grid, XGBoost
+    early stopping). This window includes the COVID-19 shock of 2020, testing
+    model robustness to structural breaks.
+  \item \textbf{Test set (January 2022 -- October 2024):} Used for final
+    out-of-sample performance reporting ($R^2$, RMSE, Spearman $\rho$).
+    Models are refit on training + validation combined before test evaluation.
+  \item \textbf{Prediction month (November 2024):} Features are observed as
+    of October 31, 2024 (the portfolio formation date). The \texttt{indadjret}
+    for November 2024 is \emph{never} used during modelling; it serves only
+    for ex-post verification of the recommendation.
+\end{itemize}
+
+
+
+\begin{longtable}[]{{lrrrrr}}
+\caption{Table . Data splits}\label{tab:splits}\tabularnewline
+\toprule()
+\textbf{Split} & \textbf{Start} & \textbf{End} & \textbf{N Rows} & \textbf{N Stocks} & \textbf{N Months} \\
+\midrule()
+\endfirsthead
+\toprule()
+\textbf{Split} & \textbf{Start} & \textbf{End} & \textbf{N Rows} & \textbf{N Stocks} & \textbf{N Months} \\
+\midrule()
+\endhead
+Training & January 2001 & December 2018 & 776,610 & 9163 & 216 \\
+Validation & January 2019 & December 2021 & 133,199 & 4753 & 36 \\
+Test & January 2022 & October 2024 & 143,929 & 5223 & 34 \\
+Prediction & November 2024 & November 2024 & 38 & 38 & 1 \\
+\bottomrule()
+\end{longtable}
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\linewidth]{media/media/fig_train_test_timeline.png}
+\caption{Chronological data splits. Models are trained on the full
+cross-sectional universe; the prediction is restricted to 38 Household
+\& Personal Products stocks in November 2024.}
+\end{figure}
+
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+{[}There are sub-headings below to structure your results. Prior to
+introducing those sub-headings I have included an example table and an
+example chart.{]}
+
+{[}Earlier you have an example of a table. Because I inserted a caption
+before making the table I can use Cross-reference under the References
+tab to refer to the table using above/below, table number or the table
+number and heading. For example, I can write ``in the table '' and put
+in ``below'' using the Cross-reference button; or I can write ``in ''
+and put in the table number using the Cross-reference button; or I can
+write ``in '' and put in the entire heading.{]}
+
+{[}Here is an example of a figure. Using Cross-references I can refer to
+the figure , I can refer to , and I can refer to .{]}
+
+\protect\hypertarget{_Ref88579904}{}{}Figure . Percentage change from a
+year ago in the U.S. Consumer Price Index for all urban consumers: All
+items in U.S. City Average, seasonally-adjusted
+
+\includegraphics[width=6.5in,height=3.19028in]{vertopal_5ef99677aafc4edbb4ea6857ad1ad357/media/image2.png}
+
+\hypertarget{regression}{%
+\subsection{Regression}\label{regression}}
+
+\hypertarget{ordinary-least-squares-regression}{%
+\subsubsection{Ordinary least squares
+regression}\label{ordinary-least-squares-regression}}
+
+
+The OLS model achieves an out-of-sample $R^2$ of -0.0012 on the test set (January 2022 -- October 2024), with RMSE of 0.1852, MAE of 0.1078, and Spearman rank correlation of -0.0441 ($p$-value 0.0000).
+
+\begin{longtable}[]{{lrr}}
+\caption{Table . OLS coefficient estimates (sorted by $|$standardised coef$|$)}\label{tab:ols_coefs}\tabularnewline
+\toprule()
+\textbf{Feature} & \textbf{Coefficient} & \textbf{Std Coef} \\
+\midrule()
+\endfirsthead
+\toprule()
+\textbf{Feature} & \textbf{Coefficient} & \textbf{Std Coef} \\
+\midrule()
+\endhead
+Momentum 12m & -0.008384 & -0.004461 \\
+Momentum 11m & 0.008443 & 0.004292 \\
+Log Market Cap & -0.002026 & -0.004238 \\
+Book-to-Market & 0.006195 & 0.003961 \\
+NWC/Assets & 0.008014 & 0.001998 \\
+Current Ratio & -0.000429 & -0.001573 \\
+Pct Male Board & -0.004090 & -0.001543 \\
+Ln Share Issuance Chg & 0.067220 & 0.001264 \\
+Beta & 0.001172 & 0.000831 \\
+Amihud Illiquidity & -0.000131 & -0.000784 \\
+ROIC & 0.002222 & 0.000452 \\
+Chg in ROA & 0.003365 & 0.000449 \\
+Net Profit Margin & 0.000121 & 0.000314 \\
+Std Dev Board Age & -0.000073 & -0.000286 \\
+Option/Stock Vol & 0.064712 & 0.000087 \\
+\bottomrule()
+\end{longtable}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.80\linewidth]{media/media/fig_ols_coefficients.png}
+\caption{OLS standardised coefficient estimates. Blue bars indicate a positive
+relationship with industry-adjusted returns; red bars indicate a negative
+relationship. Sorted by absolute magnitude.}
+\end{figure}
+
+
+\hypertarget{penalized-regression}{%
+\subsubsection{Penalized regression}\label{penalized-regression}}
+
+
+The optimal regularization parameter selected via \texttt{LassoCV} with
+5-fold time-series cross-validation is $\alpha = 4.50e-03$.
+At this penalty level, 13 of 15 predictors are shrunk
+exactly to zero, demonstrating the variable-selection property of LASSO.
+
+The LASSO model achieves an out-of-sample $R^2$ of -0.0012 on the test set (January 2022 -- October 2024), with RMSE of 0.1852, MAE of 0.1075, and Spearman rank correlation of -0.0576 ($p$-value 0.0000).
+
+\begin{longtable}[]{{lrr}}
+\caption{Table . LASSO coefficient estimates ($\\alpha=4.50e-03$, 13 features zeroed)}\label{tab:lasso_coefs}\tabularnewline
+\toprule()
+\textbf{Feature} & \textbf{Coefficient} & \textbf{Zeroed} \\
+\midrule()
+\endfirsthead
+\toprule()
+\textbf{Feature} & \textbf{Coefficient} & \textbf{Zeroed} \\
+\midrule()
+\endhead
+Log Market Cap & -0.000670 & No \\
+Book-to-Market & 0.000356 & No \\
+Chg in ROA & 0.000000 & Yes \\
+Amihud Illiquidity & 0.000000 & Yes \\
+Std Dev Board Age & -0.000000 & Yes \\
+Pct Male Board & -0.000000 & Yes \\
+Net Profit Margin & 0.000000 & Yes \\
+Momentum 12m & -0.000000 & Yes \\
+Current Ratio & -0.000000 & Yes \\
+Option/Stock Vol & -0.000000 & Yes \\
+Beta & -0.000000 & Yes \\
+NWC/Assets & 0.000000 & Yes \\
+Ln Share Issuance Chg & 0.000000 & Yes \\
+Momentum 11m & -0.000000 & Yes \\
+ROIC & -0.000000 & Yes \\
+\bottomrule()
+\end{longtable}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\linewidth]{media/media/fig_lasso_path.png}
+\caption{LASSO regularization path. Each coloured line shows how a
+coefficient evolves as the penalty decreases (right). The dashed vertical
+line marks the cross-validation-selected $\alpha$.}
+\end{figure}
+
+
+\hypertarget{decision-trees}{%
+\subsection{Decision trees}\label{decision-trees}}
+
+\hypertarget{vanilla-decision-tree}{%
+\subsubsection{Vanilla decision tree}\label{vanilla-decision-tree}}
+
+
+The optimal tree depth selected via validation-set $R^2$ grid search is
+\textbf{3} (validation $R^2 = 0.0032$).
+The most important splitting feature is \textbf{Momentum 12m}.
+
+The vanilla decision tree model achieves an out-of-sample $R^2$ of -0.0095 on the test set (January 2022 -- October 2024), with RMSE of 0.1860, MAE of 0.1083, and Spearman rank correlation of -0.0469 ($p$-value 0.0000).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{media/media/fig_tree_structure.png}
+\caption{Vanilla decision tree structure (best depth = 3,
+rendered at depth $\leq 3$ for readability). Shading intensity
+indicates the predicted value in each leaf.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.75\linewidth]{media/media/fig_tree_importance.png}
+\caption{Vanilla decision tree feature importances (mean decrease in
+impurity). Only features assigned non-zero importance are split upon.}
+\end{figure}
+
+
+\hypertarget{random-forest}{%
+\subsubsection{Random forest}\label{random-forest}}
+
+
+Grid search over \{\texttt{n\_estimators} \in \{100, 200\},
+\texttt{max\_depth} \in \{5, 10\},
+\texttt{max\_features} \in \{\text{sqrt}, 0.5\}\} (8 combinations)
+selects \textbf{200 trees, max depth 10,
+max features sqrt} (validation $R^2 = 0.0054$).
+The ensemble averages over many decorrelated trees, reducing variance
+relative to the single decision tree.
+
+The random forest model achieves an out-of-sample $R^2$ of -0.0090 on the test set (January 2022 -- October 2024), with RMSE of 0.1860, MAE of 0.1089, and Spearman rank correlation of -0.0278 ($p$-value 0.0000).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.80\linewidth]{media/media/fig_rf_importance.png}
+\caption{Random forest feature importances (mean decrease in impurity,
+top 15 features). Values are normalised to sum to 1 across all features.}
+\end{figure}
+
+
+\hypertarget{gradient-boosting}{%
+\subsubsection{Gradient boosting{]}}\label{gradient-boosting}}
+
+{[}Insert analysis based upon gradient boosting.{]}
+
+\hypertarget{neural-networks}{%
+\subsection{Neural networks}\label{neural-networks}}
+
+
+The neural network architecture is a 3-layer multi-layer perceptron
+(MLP) with hidden layers of sizes $(128, 64, 32)$, ReLU activations,
+Adam optimiser ($\eta = 0.001$), and L2 weight decay $\alpha = 0.001$
+(12,417 trainable parameters total). Input features are
+standardised using a \texttt{StandardScaler} fitted on the training set.
+Early stopping monitors validation loss with patience 20; training
+stopped at epoch \textbf{30}.
+
+The neural network model achieves an out-of-sample $R^2$ of -0.0059 on the test set (January 2022 -- October 2024), with RMSE of 0.1857, MAE of 0.1087, and Spearman rank correlation of -0.0027 ($p$-value 0.3041).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.82\linewidth]{media/media/fig_nn_loss.png}
+\caption{Neural network training and validation loss curves. The dashed
+vertical line (where present) marks the early-stopping epoch.}
+\end{figure}
+
+
+\hypertarget{reconciliation-of-results-based-upon-different-estimation-techniques}{%
+\subsection{Reconciliation of results based upon different estimation
+techniques}\label{reconciliation-of-results-based-upon-different-estimation-techniques}}
+
+
+Table~\ref{tab:reconciliation} presents the top-10 predicted
+industry-adjusted return rankings for November 2024 across all six
+estimation methods. Panel A reports the stock ticker at each rank;
+Panel B reports the corresponding predicted industry-adjusted return
+expressed as a percentage.
+
+Test-set performance varies across methods: OLS: $R^2=-0.001$ | LASSO: $R^2=-0.001$ | VANILLA TREE: $R^2=-0.009$ | RANDOM FOREST: $R^2=-0.009$ | GRADIENT BOOSTING: $R^2=-0.004$ | NEURAL NETWORK: $R^2=-0.006$.
+Despite this variation, the rankings show meaningful consistency for
+the top-ranked stocks. \textbf{NAII (NATURAL ALTERNATIVES INTL INC)}
+appears in the top 3 under 2 of 6 models and is our
+recommended buy for November 2024.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.90\linewidth]{media/media/fig_sector_predictions.png}
+\caption{Average rank across six models for all 38 Household \& Personal
+Products stocks in November 2024. Lower average rank indicates a more
+consistent buy recommendation. Crimson bars denote the top-3 consensus picks.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.90\linewidth]{media/media/fig_metrics_comparison.png}
+\caption{Out-of-sample $R^2$ and RMSE for each model evaluated on the
+test set (January 2022 -- October 2024).}
+\end{figure}
+
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0740}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1543}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1543}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1543}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1543}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1543}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1543}}@{}}
+\caption{\protect\hypertarget{_Toc224486650}{}{}Table . Descriptive
+statistics}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.3087} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Regression}
+\end{minipage}} &
+\multicolumn{3}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.4630} + 4\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Decision trees}
+\end{minipage}} &
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Neural networks}
+\end{minipage}} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Rank}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{OLS}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{LASSO}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Vanilla}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Random Forest}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Gradient boosting}
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.3087} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Regression}
+\end{minipage}} &
+\multicolumn{3}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.4630} + 4\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Decision trees}
+\end{minipage}} &
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Neural networks}
+\end{minipage}} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Rank}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{OLS}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{LASSO}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Vanilla}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Random Forest}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Gradient boosting}
+\end{minipage} \\
+\midrule()
+\endhead
+\multicolumn{7}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{1.0000} + 12\tabcolsep}@{}}{%
+\textbf{Panel A: Stock}} \\
+1 & NAII & NAII & SKIN & UPXI & UPXI & NUS \\
+2 & UG & UPXI & MED & SKIN & SKIN & SKIN \\
+3 & HNST & MTEX & UPXI & MED & UG & UG \\
+4 & NUS & AXIL & UG & NUS & NUS & NAII \\
+5 & MED & NHTC & NHTC & UG & NAII & MED \\
+6 & NHTC & NUS & DSY & NAII & MED & HNST \\
+7 & OLPX & UG & LFVN & WALD & WALD & DSY \\
+8 & MTEX & MED & NAII & HNST & LFVN & NHTC \\
+9 & SKIN & SNYR & AXIL & DSY & HNST & LFVN \\
+10 & USNA & LFVN & NATR & LFVN & ODC & ODC \\
+\multicolumn{7}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{1.0000} + 12\tabcolsep}@{}}{%
+\textbf{Panel B: Industry-adjusted predicted return (\%)}} \\
+1 & 2.21 & 0.65 & 6.67 & 18.05 & 7.59 & 4.44 \\
+2 & 1.57 & 0.61 & 6.67 & 3.42 & 3.28 & 3.12 \\
+3 & 1.25 & 0.58 & 6.67 & 1.99 & 1.43 & 2.07 \\
+4 & 1.21 & 0.54 & 0.66 & 1.54 & 1.41 & 1.67 \\
+5 & 1.07 & 0.52 & 0.66 & 1.03 & 1.09 & 1.20 \\
+6 & 1.04 & 0.52 & 0.66 & 0.79 & 0.93 & 0.85 \\
+7 & 0.92 & 0.52 & 0.66 & 0.73 & 0.68 & 0.34 \\
+8 & 0.91 & 0.51 & 0.66 & 0.56 & 0.49 & 0.33 \\
+9 & 0.89 & 0.50 & 0.66 & 0.38 & 0.33 & 0.27 \\
+10 & 0.85 & 0.49 & 0.66 & 0.34 & 0.28 & 0.27 \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+{[}Reach your conclusion in this section. {]}
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+Fama, E.F., and K.R. French, 1992.
+\href{https://www.jstor.org/stable/2329112}{The cross-section of
+expected stock returns}, Journal of Finance, 47, 427--465.
+
+\hypertarget{appendix-description-of-each-variable}{%
+\section{Appendix: Description of each
+variable}\label{appendix-description-of-each-variable}}
+
+\hypertarget{real-market-capitalization-and-its-natural-logarithm}{%
+\subparagraph{Real market capitalization and its natural
+logarithm}\label{real-market-capitalization-and-its-natural-logarithm}}
+
+Real market capitalization is the market value of the stock, adjusted to
+purchasing power of November 2025 using the Consumer Price Index. There
+is a substantial body of evidence that small stocks have historically
+earned higher returns than large stocks (for example, Fama and French,
+1992). This is most likely because small stocks are riskier than large
+stocks. Compared to companies with market capitalization, small
+capitalization companies are likely to have less analyst coverage, less
+chance their debt is rated by ratings agencies like S\&P, Moody's and
+Fitch, less institutional investment and lower liquidity. Market
+capitalization is compiled from the CRSP database accessed via WRDS. The
+natural logarithm of real market capitalization is simply a
+transformation of real market capitalization for regression analysis to
+allow for a more realistic linear relationship between industry-adjusted
+stock returns and the market value of equity. Stocks listed in North
+America, and indeed most equity markets, have a small percentage of very
+large companies and a high percentage of medium and small companies.
+
+\hypertarget{book-to-market-equity}{%
+\subparagraph{Book-to-market equity}\label{book-to-market-equity}}
+
+The book-to-market equity ratio is the ratio of the company's book value
+of equity from the balance sheet to its market capitalization. There is
+a substantial body of evidence that stocks with high book-to-market
+ratios have historically earned higher returns than stocks with low
+book-to-market ratios (or example, Fama and French, 1992). Whether this
+result is due to mispricing of increased risk exposure is a subject of
+debate, but prior to the last two decades there was no disputing the
+empirical result. Data from the last 20 years suggests that the
+book-to-market equity ratio has not been as useful a signal of high
+future returns as in the past. This could be due to increased market
+efficiency, or a diminished relevance of the book value of equity as a
+proxy for the equity holders' investment base. In recent years, there
+has been an increase in research and development spending and most
+expenditure on R\&D is expensed rather than being capitalized on the
+balance sheet and therefore flowing to equity value. The book-to-market
+equity ratio was obtained from the Financial Ratios Suite of WRDS.
+
+\hypertarget{option-volumestock-volume}{%
+\subparagraph{Option volume/stock
+volume}\label{option-volumestock-volume}}
+
+{[}Insert text{]}
+
+\hypertarget{momentum12-12-mth-ret-ending-1-mth-prior-to-port-formation}{%
+\subparagraph{Momentum12 (12 mth ret ending 1 mth prior to port
+formation)}\label{momentum12-12-mth-ret-ending-1-mth-prior-to-port-formation}}
+
+{[}Insert text{]}
+
+\hypertarget{net-profit-margin-net-profitsales}{%
+\subparagraph{Net profit margin (Net
+profit/Sales)}\label{net-profit-margin-net-profitsales}}
+
+{[}Insert text{]}
+
+\hypertarget{standard-deviation-of-board-members-age}{%
+\subparagraph{Standard deviation of board members'
+age}\label{standard-deviation-of-board-members-age}}
+
+{[}Insert text{]}
+
+\hypertarget{percentage-male-board-members}{%
+\subparagraph{Percentage male board
+members}\label{percentage-male-board-members}}
+
+{[}Insert text{]}
+
+\hypertarget{systematic-risk}{%
+\subparagraph{Systematic risk}\label{systematic-risk}}
+
+{[}Insert text{]}
+
+\hypertarget{net-working-capitalassets}{%
+\subparagraph{Net working
+capital/Assets}\label{net-working-capitalassets}}
+
+{[}Insert text{]}
+
+\hypertarget{amihud-liquidity-x-1000000}{%
+\subparagraph{Amihud liquidity x
+1,000,000}\label{amihud-liquidity-x-1000000}}
+
+{[}Insert text{]}
+
+\hypertarget{current-ratio-current-assetscurrent-liabilities}{%
+\subparagraph{Current ratio (Current assets/Current
+liabilities)}\label{current-ratio-current-assetscurrent-liabilities}}
+
+{[}Insert text{]}
+
+\hypertarget{natural-logarithm-of-the-change-in-issued-shares}{%
+\subparagraph{Natural logarithm of the change in issued
+shares}\label{natural-logarithm-of-the-change-in-issued-shares}}
+
+{[}Insert text{]}
+
+\hypertarget{momentum-11-11-mth-ret-ending-1-mth-prior-to-port-formation}{%
+\subparagraph{Momentum 11 (11 mth ret ending 1 mth prior to port
+formation)}\label{momentum-11-11-mth-ret-ending-1-mth-prior-to-port-formation}}
+
+{[}Insert text{]}
+
+\hypertarget{change-in-return-on-assets}{%
+\subparagraph{Change in return on
+assets}\label{change-in-return-on-assets}}
+
+{[}Insert text{]}
+
+\hypertarget{return-on-invested-capital}{%
+\subparagraph{Return on invested
+capital}\label{return-on-invested-capital}}
+
+{[}Insert text{]}
+
+\end{document}

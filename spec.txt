@@ -1,0 +1,12 @@
+Our goal for the report: Using machine learning concepts, analysis, and simulation,
+pick 1 stock (within our industry/sector name) to buy and hold by the end of the dataset. 
+
+Dataset path: fin427report\Aggregate data 20260315_1425.csv
+
+Our industry/sector name: Household and personal products, sector code 30, group code 3030
+
+Follow and put all results and justification in the latex template example in 
+report_latex/reportoutline.latex.
+
+Within the report, there should be a basic descriptive statistics/info chart, then apply several 
+machine learning concepts/examples applied to our : OLS, XGBoost, simple neural networks, etc. 
