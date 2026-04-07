@@ -52,7 +52,10 @@ _P_OLS    = "{[}Insert analysis based upon ordinary least squares regression.{]}
 _P_LASSO  = "{[}Insert analysis based upon penalized regression.{]}"
 _P_TREE   = "{[}Insert analysis based upon one decision tree.{]}"
 _P_RF     = "{[}Insert analysis based upon random forest.{]}"
-_P_XGB    = "{[}Insert analysis based upon gradient boosting{]}."
+_P_XGB    = (
+    "{[}Insert analysis based upon gradient boosting{]}.",
+    "{[}Insert analysis based upon gradient boosting.{]}",
+)
 _P_NN     = "Insert analysis based upon neural networks."
 _P_RECON  = (
     "{[}Insert text reconciling results summarized in the table below. You\n"
@@ -85,19 +88,19 @@ def _fill_panel_rows(content: str, panel_a_rows: str, panel_b_rows: str) -> str:
 
 
 def populate(
-    desc_stats_table: str,
-    desc_stats_text: str,
-    voi_block: str,
-    splits_block: str,
-    ols_block: str,
-    lasso_block: str,
-    tree_block: str,
-    rf_block: str,
-    xgb_block: str,
-    nn_block: str,
-    recon_text: str,
-    panel_a_rows: str,
-    panel_b_rows: str,
+    desc_stats_table: str = "",
+    desc_stats_text: str = "",
+    voi_block: str = "",
+    splits_block: str = "",
+    ols_block: str = "",
+    lasso_block: str = "",
+    tree_block: str = "",
+    rf_block: str = "",
+    xgb_block: str = "",
+    nn_block: str = "",
+    recon_text: str = "",
+    panel_a_rows: str = "",
+    panel_b_rows: str = "",
 ):
     """
     Read the LaTeX template, substitute all placeholders, write result to disk.
@@ -105,11 +108,12 @@ def populate(
     with open(LATEX_IN, "r", encoding="utf-8") as f:
         content = f.read()
 
-    desc_combined = (
-        desc_stats_text
-        + "\n\n"
-        + desc_stats_table
-        + r"""
+    if desc_stats_text or desc_stats_table:
+        desc_combined = (
+            desc_stats_text
+            + "\n\n"
+            + desc_stats_table
+            + r"""
 
 \begin{figure}[htbp]
 \centering
@@ -120,7 +124,9 @@ Spearman rank correlations. The momentum variables (\texttt{finmom11},
 \texttt{finmom12}) are highly correlated with each other, as expected.}
 \end{figure}
 """
-    )
+        )
+    else:
+        desc_combined = ""
 
     replacements = [
         (_P_DESC_STATS, desc_combined),
@@ -136,10 +142,26 @@ Spearman rank correlations. The momentum variables (\texttt{finmom11},
     ]
 
     for placeholder, replacement in replacements:
-        if placeholder in content:
-            content = content.replace(placeholder, replacement)
-        else:
-            print(f"  WARNING: placeholder not found in template:\n  {placeholder[:80]!r}")
+        placeholders = placeholder if isinstance(placeholder, tuple) else (placeholder,)
+        matched = False
+        for item in placeholders:
+            if item in content:
+                content = content.replace(item, replacement)
+                matched = True
+                break
+
+        if matched:
+            continue
+
+        # Clean partial-populate mode: empty replacement means caller skipped that section.
+        if replacement == "":
+            continue
+
+        # If rerunning on an already-populated template, suppress false warnings.
+        if replacement in content:
+            continue
+
+        print(f"  WARNING: placeholder not found in template:\n  {placeholders[0][:80]!r}")
 
     content = _fill_panel_rows(content, panel_a_rows, panel_b_rows)
 

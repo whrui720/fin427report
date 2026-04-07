@@ -146,7 +146,7 @@ squares regression
 \protect\hyperlink{random-forest}{Random forest
 \protect\hyperlink{random-forest}{3}}
 
-\protect\hyperlink{gradient-boosting}{Gradient boosting{]}
+\protect\hyperlink{gradient-boosting}{Gradient boosting
 \protect\hyperlink{gradient-boosting}{3}}
 
 \protect\hyperlink{neural-networks}{Neural networks
@@ -650,9 +650,25 @@ top 15 features). Values are normalised to sum to 1 across all features.}
 
 
 \hypertarget{gradient-boosting}{%
-\subsubsection{Gradient boosting{]}}\label{gradient-boosting}}
+\subsubsection{Gradient boosting}\label{gradient-boosting}}
 
-{[}Insert analysis based upon gradient boosting.{]}
+
+XGBoost is configured with \texttt{n\_estimators=1000},
+\texttt{learning\_rate=0.05}, \texttt{max\_depth=5},
+\texttt{subsample=0.8}, \texttt{colsample\_bytree=0.8}, and
+early stopping with patience 50 evaluated on the validation set.
+Training halted at iteration \textbf{79}.
+
+The XGBoost gradient boosting model achieves an out-of-sample $R^2$ of -0.0041 on the test set (January 2022 -- October 2024), with RMSE of 0.1855, MAE of 0.1084, and Spearman rank correlation of 0.0014 ($p$-value 0.6047).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.80\linewidth]{media/media/fig_xgb_importance.png}
+\caption{XGBoost feature importances measured by gain (total improvement
+in the loss function attributed to each feature across all splits).
+Features absent from the figure received zero gain during training.}
+\end{figure}
+
 
 \hypertarget{neural-networks}{%
 \subsection{Neural networks}\label{neural-networks}}
