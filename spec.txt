@@ -1,6 +1,8 @@
 Our goal for the report: Using machine learning concepts, analysis, and simulation,
 pick 1 stock (within our industry/sector name) to buy and hold by the end of the dataset. 
 
+Our variable of interest is net profit margin.
+
 Dataset path: fin427report\Aggregate data 20260315_1425.csv
 
 Our industry/sector name: Household and personal products, sector code 30, group code 3030

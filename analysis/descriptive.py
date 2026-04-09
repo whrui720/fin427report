@@ -83,10 +83,10 @@ def plot_correlation_heatmap(train: pd.DataFrame):
     print("  Saved fig_desc_stats.png")
 
 
-# ── Section 4: Variable of Interest (finmom12) ───────────────────────────────
+# ── Section 4: Variable of Interest (finnpm) ─────────────────────────────────
 
 def voi_desc_table(hist_df: pd.DataFrame) -> str:
-    """Single-variable descriptive stats table for finmom12."""
+    """Single-variable descriptive stats table for finnpm."""
     s = hist_df[VOI].dropna()
     miss_col = MISS_MAP[VOI]
     pct_miss = hist_df[miss_col].mean() * 100
@@ -106,14 +106,14 @@ def voi_desc_table(hist_df: pd.DataFrame) -> str:
     }]
     return build_longtable(
         rows,
-        caption=r"Table . Descriptive statistics for Momentum 12m (variable of interest)",
+        caption=r"Table . Descriptive statistics for Net Profit Margin (variable of interest)",
         label="tab:voi_stats",
     )
 
 
 def plot_voi_distribution(hist_df: pd.DataFrame):
     """
-    Save fig_voi_distribution.png — histogram + KDE of finmom12
+    Save fig_voi_distribution.png — histogram + KDE of finnpm
     for sector 30/3030 stocks only.
     """
     set_style()
@@ -128,7 +128,7 @@ def plot_voi_distribution(hist_df: pd.DataFrame):
     ax.set_xlabel(FEATURE_LABELS[VOI])
     ax.set_ylabel("Density")
     ax.set_title(
-        "Distribution of 12-Month Momentum — "
+        "Distribution of Net Profit Margin — "
         "Household \\& Personal Products Sector"
     )
     save_fig(os.path.join(MEDIA_DIR, "fig_voi_distribution.png"))
@@ -152,10 +152,10 @@ def plot_voi_return_scatter(train: pd.DataFrame):
     fig, ax = plt.subplots(figsize=(8, 4))
     means.plot(kind="bar", ax=ax, color="steelblue", edgecolor="white")
     ax.axhline(0, color="black", linewidth=0.8, linestyle="--")
-    ax.set_xlabel("Momentum 12m Decile (1 = lowest, 10 = highest)")
+    ax.set_xlabel("Net Profit Margin Decile (1 = lowest, 10 = highest)")
     ax.set_ylabel("Mean Industry-Adjusted Return (\\%)")
     ax.set_title(
-        "Mean Industry-Adjusted Return by Momentum Decile\\n"
+        "Mean Industry-Adjusted Return by Net Profit Margin Decile\\n"
         "(Training Set, Household \\& Personal Products)"
     )
     ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
@@ -169,24 +169,21 @@ def voi_latex_block(hist_df: pd.DataFrame, train: pd.DataFrame) -> str:
     plot_voi_distribution(hist_df)
     plot_voi_return_scatter(train)
     text = r"""
-We select \textbf{12-month momentum} (\texttt{finmom12}) as our variable of
-interest. The momentum anomaly -- the tendency for recent winners to continue
-outperforming recent losers -- is among the most robust and replicated findings
-in empirical asset pricing (Jegadeesh and Titman, 1993). The canonical
-specification uses the cumulative return over months $t-12$ through $t-2$
-(skipping the most recent month to avoid short-term reversal). For the
-Household and Personal Products sector, stable fundamental cashflows reduce the
-likelihood that strong past returns will be rapidly mean-reverted by earnings
-surprises, making momentum particularly informative.
+We select \textbf{net profit margin} (\texttt{finnpm}) as our variable of
+interest. Net profit margin (net income divided by sales) is a fundamental
+profitability measure that captures how efficiently a firm converts revenue
+into earnings. In the Household and Personal Products sector, where firms
+compete on brand equity and operational efficiency, sustained profit margins
+signal durable competitive advantages that may be rewarded by the market.
 
 The variable is winsorized at the 1\textsuperscript{st} and
 99\textsuperscript{th} percentiles (constraint 1.00), which preserves large
-momentum signals while eliminating extreme data errors.
+profitability signals while eliminating extreme data errors.
 Descriptive statistics for the full sample (excluding November 2024) are
 presented in the table below. Figure~2 shows the distribution of
-\texttt{finmom12} within our sector, and Figure~3 confirms the positive
-monotonic relationship between momentum decile and mean industry-adjusted
-return in the training set.
+\texttt{finnpm} within our sector, and Figure~3 shows the relationship
+between net profit margin decile and mean industry-adjusted return in the
+training set.
 
 """
     return text + "\n\n" + table + r"""
@@ -194,16 +191,15 @@ return in the training set.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.80\linewidth]{media/media/fig_voi_distribution.png}
-\caption{Distribution of 12-month momentum (\texttt{finmom12}) for
+\caption{Distribution of net profit margin (\texttt{finnpm}) for
 Household \& Personal Products stocks (sector 30, group 3030).}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.80\linewidth]{media/media/fig_voi_return_scatter.png}
-\caption{Mean industry-adjusted return by decile of 12-month momentum,
-training set (January 2001 -- December 2018), Household \& Personal Products sector.
-Higher-momentum stocks earn systematically higher subsequent returns.}
+\caption{Mean industry-adjusted return by decile of net profit margin,
+training set (January 2001 -- December 2018), Household \& Personal Products sector.}
 \end{figure}
 """
 

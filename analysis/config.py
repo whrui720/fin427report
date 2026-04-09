@@ -22,7 +22,7 @@ GROUP  = 3030
 
 # ── Target & variable of interest ─────────────────────────────────────────────
 TARGET = "indadjret"
-VOI    = "finmom12"   # 12-month momentum (Jegadeesh & Titman 1993)
+VOI    = "finnpm"     # Net profit margin (Net profit / Sales)
 
 # ── Feature list (winsorized, zero missing values) ────────────────────────────
 # lnlag1mcreal has no fin* prefix — it is already a log transformation

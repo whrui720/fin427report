@@ -3,7 +3,14 @@
     "allow": [
       "Bash(python:*)",
       "Bash(pandoc --version)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(pandoc:*)",
+      "Bash(where pandoc:*)",
+      "Bash(npm list:*)",
+      "Bash(npm install:*)",
+      "Bash(node create_presentation.js)",
+      "Bash(node:*)",
+      "Bash(sed:*)"
     ]
   }
 }

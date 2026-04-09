@@ -157,12 +157,12 @@ def add_desc_stats_table(doc):
 
 
 def add_voi_table(doc):
-    """Table — Descriptive statistics for Momentum 12m (variable of interest)."""
-    caption(doc, 'Table. Descriptive statistics for Momentum 12m (variable of interest)')
+    """Table — Descriptive statistics for Net Profit Margin (variable of interest)."""
+    caption(doc, 'Table. Descriptive statistics for Net Profit Margin (variable of interest)')
     headers = ['Variable', 'N', 'Mean', 'Std', 'p1', 'p5', 'p25', 'p50', 'p75', 'p95', 'p99', '%Miss']
     data = [
-        ('Momentum 12m', '1,053,738', '0.1156', '0.5292',
-         '-0.8424', '-0.6154', '-0.1756', '0.0376', '0.3066', '1.0525', '2.4969', '5.1'),
+        ('Net Profit Margin', '1,053,738', '-0.4015', '2.8284',
+         '-20.2819', '-0.8800', '0.0000', '0.0250', '0.0950', '0.2400', '0.3770', '17.7'),
     ]
     table = doc.add_table(rows=1 + len(data), cols=len(headers))
     table.style = 'Table Grid'
@@ -375,9 +375,9 @@ p(doc, (
     'stock returns. Despite limited predictive power in aggregate, the models exhibit '
     'meaningful agreement in their top-ranked picks for November 2024. '
     'NAII (Natural Alternatives International Inc.) appears in the top three rankings under '
-    'two of six models and is our recommended buy. The 12-month momentum factor (finmom12) '
-    'consistently receives the highest importance weight across the tree-based and linear '
-    'models, supporting the robustness of the momentum anomaly in this sector.'
+    'two of six models and is our recommended buy. Net profit margin (finnpm) is our '
+    'variable of interest, capturing how efficiently firms in this sector convert revenue '
+    'into earnings.'
 ))
 doc.add_paragraph()
 
@@ -402,8 +402,8 @@ doc.add_paragraph()
 
 h(doc, 'Figures', level=1)
 p(doc, 'Figure 1. Spearman correlation matrix of the 15 predictor variables')
-p(doc, 'Figure 2. Distribution of 12-month momentum (finmom12)')
-p(doc, 'Figure 3. Mean industry-adjusted return by decile of 12-month momentum')
+p(doc, 'Figure 2. Distribution of net profit margin (finnpm)')
+p(doc, 'Figure 3. Mean industry-adjusted return by decile of net profit margin')
 p(doc, 'Figure 4. Chronological data splits')
 p(doc, 'Figure 5. OLS standardised coefficient estimates')
 p(doc, 'Figure 6. LASSO regularization path')
@@ -479,35 +479,33 @@ fig(doc, 'fig_desc_stats.png',
 
 h(doc, 'Descriptive Statistics on Your Variable of Interest', level=2)
 p(doc, (
-    'We select 12-month momentum (finmom12) as our variable of interest. '
-    'The momentum anomaly \u2014 the tendency for recent winners to continue '
-    'outperforming recent losers \u2014 is among the most robust and replicated findings '
-    'in empirical asset pricing (Jegadeesh and Titman, 1993). The canonical specification '
-    'uses the cumulative return over months t\u221212 through t\u22122 '
-    '(skipping the most recent month to avoid short-term reversal). For the Household '
-    'and Personal Products sector, stable fundamental cashflows reduce the likelihood '
-    'that strong past returns will be rapidly mean-reverted by earnings surprises, '
-    'making momentum particularly informative.'
+    'We select net profit margin (finnpm) as our variable of interest. '
+    'Net profit margin \u2014 defined as net income divided by total sales \u2014 is a '
+    'fundamental profitability measure that captures how efficiently a firm converts '
+    'revenue into earnings after all costs, taxes, and interest. In the Household and '
+    'Personal Products sector, where firms compete on brand equity and operational '
+    'efficiency, sustained profit margins signal durable competitive advantages that '
+    'may be rewarded by the market.'
 ))
 p(doc, (
     'The variable is winsorized at the 1st and 99th percentiles (constraint 1.00), '
-    'which preserves large momentum signals while eliminating extreme data errors. '
+    'which preserves large profitability signals while eliminating extreme data errors. '
     'Descriptive statistics for the full sample (excluding November 2024) are presented '
-    'in the table below. Figure 2 shows the distribution of finmom12 within our sector, '
-    'and Figure 3 confirms the positive monotonic relationship between momentum decile '
-    'and mean industry-adjusted return in the training set.'
+    'in the table below. Figure 2 shows the distribution of finnpm within our sector, '
+    'and Figure 3 shows the relationship between net profit margin decile and mean '
+    'industry-adjusted return in the training set.'
 ))
 doc.add_paragraph()
 add_voi_table(doc)
 
 fig(doc, 'fig_voi_distribution.png',
-    'Figure 2. Distribution of 12-month momentum (finmom12) for Household & Personal '
+    'Figure 2. Distribution of net profit margin (finnpm) for Household & Personal '
     'Products stocks (sector 30, group 3030).', width=5.0)
 
 fig(doc, 'fig_voi_return_scatter.png',
-    'Figure 3. Mean industry-adjusted return by decile of 12-month momentum, '
-    'training set (January 2001 \u2013 December 2018), Household & Personal Products sector. '
-    'Higher-momentum stocks earn systematically higher subsequent returns.', width=5.0)
+    'Figure 3. Mean industry-adjusted return by decile of net profit margin, '
+    'training set (January 2001 \u2013 December 2018), Household & Personal Products sector.',
+    width=5.0)
 
 h(doc, 'Training, Test, Validation Samples and the Last Month', level=2)
 p(doc, (
